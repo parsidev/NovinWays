@@ -1,7 +1,7 @@
 NovinWays
 ==========
 
-package for NovinWays WebService - Laravel5 (published for www.novinways.com) (http://novinways.com)) this package only work for Iranian Users
+package for NovinWays WebService - Laravel5 (published for www.novinways.com) this package only work for Iranian Users
 
 installation
 ------------
@@ -71,9 +71,9 @@ This function return a ArrayOfString result with Status, TranId, BillType and Bi
 
 ```php
 Novinways::PayBill($billId, $paymentId, $reqId);
-```
-$reqId must be unique ID;
 
+$reqId must be unique ID;
+```
 
 
 ### Get list of products
@@ -91,9 +91,10 @@ This function return a JSON String result
 
 ```php
 Novinways::BuyProduct($productId, $count = 1, $reqId);
-```
+
 $reqId must be unique ID;
 $productId equal plan_name from previous function
+```
 
 
 ### Request for Pin code
@@ -102,10 +103,11 @@ This function return a JSON String result
 
 ```php
 Novinways::PinRequest($price, $type, $reqId);
-```
+
 $price: for MCI and MTN operators equal: 1000, 2000, 5000, 10000, 20000, and for RTL and TAL operators equal: 2000, 5000, 10000, 20000
 $type: MTN or MCI or RTL or TAL is valid
 $reqId must be unique ID;
+```
 
 
 ### Request TopUp
@@ -114,7 +116,7 @@ This function return a JSON String result
 
 ```php
 Novinways::ReCharge($price, $type, $phone, $reqId);
-```
+
 $price: for MTN operator from 500 to 50000 and for MCI operator equal: 1000, 2000, 5000, 10000, 20000
 $type: 
 MTN: Noraml TopUp. 
@@ -123,6 +125,7 @@ MTN#: Charge permanent line.
 WiMax
 MCI
 $reqId must be unique ID;
+```
 
 
 ### Request TopUp
@@ -131,6 +134,6 @@ This function return a JSON String result
 
 ```php
 Novinways::CheckCharge($transId);
-```
 
 you will get $transId from previous function
+```
