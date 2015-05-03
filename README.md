@@ -1,4 +1,4 @@
-laravelSms
+NovinWays
 ==========
 
 package for NovinWays WebService - Laravel5 (published for www.novinways.com) (published for [novinways.com](http://novinways.com)) this package only work for Iranian Users
