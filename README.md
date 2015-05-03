@@ -1,7 +1,7 @@
 NovinWays
 ==========
 
-package for NovinWays WebService - Laravel5 (published for www.novinways.com) (http://novinways.com)) this package only work for Iranian Users
+package for NovinWays WebService - Laravel5 (published for www.novinways.com) this package only work for Iranian Users
 
 installation
 ------------
