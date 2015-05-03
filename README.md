@@ -90,7 +90,7 @@ Novinways::ProductsInfo();
 This function return a JSON String result
 
 ```php
-Novinways::BuyProduct($productId, $count = 1, $reqId);
+Novinways::BuyProduct($productId, $count, $reqId);
 
 $reqId must be unique ID;
 $productId equal plan_name from previous function
