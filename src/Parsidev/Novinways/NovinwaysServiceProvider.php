@@ -1,6 +1,7 @@
 <?php namespace Parsidev\Novinways;
 
 use Illuminate\Support\ServiceProvider;
+use SoapClient;
 
 class NovinwaysServiceProvider extends ServiceProvider {
 
