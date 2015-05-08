@@ -7,6 +7,14 @@ class Novinways {
     protected $confg;
     protected $client;
 
+    private function getAuthArray() {
+        $param = array(
+            'WebserviceId' => $this->confg['webServiceId'],
+            'WebservicePassword' => $this->confg['webServicePassword']
+        );
+        return $param;
+    }
+
     public function __construct($config, $client) {
         $this->confg = $config;
         $this->client = $client;
@@ -14,10 +22,7 @@ class Novinways {
 
     public function ReCharge($price, $type, $phone, $reqId) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'Amount' => $price,
             'Type' => $type,
             'Account' => $phone,
@@ -29,10 +34,7 @@ class Novinways {
 
     public function CheckCharge($transId) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'TranId' => $transId
         );
         $response = $this->client->CheckCharge($param);
@@ -41,10 +43,7 @@ class Novinways {
 
     public function PinRequest($price, $type, $reqId) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'Amount' => $price,
             'Type' => $type,
             'ReqId' => $reqId
@@ -55,10 +54,7 @@ class Novinways {
 
     public function BuyProduct($productId, $reqId, $count = 1) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'ProductId' => $productId,
             'Number' => $count,
             'ReqId' => $reqId
@@ -68,33 +64,20 @@ class Novinways {
     }
 
     public function ProductsInfo() {
-        $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            )
-        );
+        $param = array('Auth' => $this->getAuthArray());
         $response = $this->client->ProductsInfo($param);
         return ($response->Information);
     }
 
     public function CheckCredit() {
-        $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            )
-        );
+        $param = array('Auth' => $this->getAuthArray());
         $response = $this->client->CheckCredit($param);
         return json_encode($response);
     }
 
     public function PayBill($billId, $paymentId, $reqId) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'BillId' => $billId,
             'PaymentId' => $paymentId,
             'ReqId' => $reqId
@@ -106,10 +89,7 @@ class Novinways {
 
     public function CheckBill($billId, $paymentId) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'BillId' => $billId,
             'PaymentId' => $paymentId
         );
@@ -119,10 +99,7 @@ class Novinways {
 
     public function TopUpOperatorStatus($operator) {
         $param = array(
-            'Auth' => array(
-                'WebserviceId' => $this->confg['webServiceId'],
-                'WebservicePassword' => $this->confg['webServicePassword']
-            ),
+            'Auth' => $this->getAuthArray(),
             'Operator' => $operator
         );
         $response = $this->client->TopUpOperatorStatus($param);
