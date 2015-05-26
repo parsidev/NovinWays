@@ -15,6 +15,21 @@ class Novinways {
         return $param;
     }
 
+    private function getBillType($typeId){
+        switch($typeId){
+            case 1: return "شرکت آب و فاضلاب";
+            case 2: return "شرکت برق";
+            case 3: return "شرکت گاز";
+            case 4: return "تلفن ثابت";
+            case 5: return "تلفن همراه";
+            case 6: return "عوارض شهرداری";
+            case 8: return "سازمان مالیت";
+            case 9: return "ریمه راهنمایی و رانندگی";
+
+
+        }
+    }
+
     public function __construct($config, $client) {
         $this->confg = $config;
         $this->client = $client;
@@ -94,6 +109,7 @@ class Novinways {
             'PaymentId' => $paymentId
         );
         $response = $this->client->CheckBill($param);
+        $response->BillTypeName = $this->getBillType($response->BillType);
         return ($response);
     }
 
