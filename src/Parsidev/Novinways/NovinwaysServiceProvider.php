@@ -14,7 +14,7 @@ class NovinwaysServiceProvider extends ServiceProvider {
     }
 
     public function register() {
-        $this->app['novinways'] = $this->app->share(function($app) {
+        $this->app['novinways'] = $this->app->singleton(Novinways::class, function($app) {
             $config = config('novinways');
             return new Novinways($config, new SoapClient($config['webServiceUrl'], array('encoding' => 'UTF-8')));
         });
