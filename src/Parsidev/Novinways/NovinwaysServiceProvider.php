@@ -5,7 +5,7 @@ use SoapClient;
 
 class NovinwaysServiceProvider extends ServiceProvider {
 
-	protected $defer = false;
+	protected $defer = true;
 
     public function boot() {
         $this->publishes([
@@ -14,7 +14,7 @@ class NovinwaysServiceProvider extends ServiceProvider {
     }
 
     public function register() {
-        $this->app['novinways'] = $this->app->singleton(Novinways::class, function($app) {
+        $this->app->singleton('novinways', function($app) {
             $config = config('novinways');
             return new Novinways($config, new SoapClient($config['webServiceUrl'], array('encoding' => 'UTF-8')));
         });
