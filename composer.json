@@ -16,7 +16,7 @@
         "psr-0": {
             "Parsidev\\Novinways": "src/"
         }
-    },,
+    },
     "extra": {
         "laravel": {
             "providers": [
