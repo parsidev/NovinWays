@@ -23,7 +23,7 @@
                           "Parsidev\\Novinways\\NovinwaysServiceProvider"
                           ],
             "aliases": {
-                "Entrust": "Parsidev\\Novinways\\Facades"
+                "Novinways": "Parsidev\\Novinways\\Facades"
             }
         }
     },
