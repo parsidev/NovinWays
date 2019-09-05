@@ -9,7 +9,7 @@ For install this package Edit your project's ```composer.json``` file to require
 
 ```php
 "require": {
-    "parsidev/novinways": "dev-master"
+    "parsidev/novinways": "5.5.x-dev"
 },
 ```
 Now, update Composer:
