@@ -5,16 +5,11 @@ package for NovinWays WebService - Laravel5.6 (published for www.novinways.com) 
 
 installation
 ------------
-For install this package Edit your project's ```composer.json``` file to require parsidev/novinways
+For install this package, run this command
 
 ```php
-"require": {
-    "parsidev/novinways": "6.0.x-dev"
+composer require parsidev/novinways
 },
-```
-Now, update Composer:
-```
-composer update
 ```
 ```
 Publish config files:
