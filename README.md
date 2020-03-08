@@ -9,7 +9,6 @@ For install this package, run this command
 
 ```php
 composer require parsidev/novinways
-},
 ```
 ```
 Publish config files:
